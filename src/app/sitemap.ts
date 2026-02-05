@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-static'
+
 const BASE_URL = 'https://directortax.com'; // Replace with actual domain
 
 async function getGuideSlugs() {
