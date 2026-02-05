@@ -1,0 +1,42 @@
+export const metadata = {
+  title: "How the Director Salary Calculator Works",
+  description: "A transparent look at the logic, assumptions, and tax rates powering our engine. We prioritize accuracy over simplification.",
+};
+
+# Inside the Engine: How We Calculate Your Tax
+
+<div className="text-sm text-muted-foreground mb-8">April 6, 2025 • 8 min read</div>
+
+Transparency is key to trust. Unlike "black box" calculators, we believe you should know exactly how your numbers are derived. Here is the logic powering the **Director Salary vs Dividend Optimization Engine**.
+
+## 1. The Hierarchy of Tax
+Our engine applies deductions in a strict legal order:
+1.  **Revenue Deductions:** Expenses, Salary, and Employer NIC are deducted first to find **Taxable Profit**.
+2.  **Corporation Tax:** Applied to Taxable Profit using 2025/26 thresholds (19% / 25% / Marginal).
+3.  **Distributable Profit:** The post-tax profit limits the maximum dividend you can legally take.
+4.  **Personal Tax:** Salary and Dividends are combined.
+    *   Salary uses the Personal Allowance first.
+    *   Dividends utilize the Dividend Allowance (£500).
+    *   Bands (Basic/Higher/Additional) are applied to the remainder.
+
+## 2. National Insurance Assumptions
+We use the **Annual Earnings Period** for Directors.
+*   **Primary Threshold:** £12,570.
+*   **Secondary Threshold:** £5,000 (The new lower limit for 2025/26).
+*   **Rate:** 15% for Employers.
+
+## 3. Student Loans
+We calculate Student Loan repayment based on **Adjusted Net Income** (Salary + Dividends) exceeding the plan threshold.
+*   *Note:* We apply the calculation to the *entire* excess, as per Self Assessment rules.
+
+## 4. Marginal Relief
+Many calculators use a flat 19% or 25%. We use the full HMRC formula:
+`((Upper Limit - Profits) * Fraction) - Standard Tax`
+This ensures that if you earn £51,000, you pay the correct marginal rate, not a flat 25%.
+
+## Data Sources
+All rates are sourced directly from:
+*   [HMRC Rates and Thresholds](https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026)
+*   [Spring/Autumn Budget 2025 Announcements](https://www.gov.uk)
+
+*Disclaimer: This tool provides estimates for planning. Final liability is determined by HMRC.*
